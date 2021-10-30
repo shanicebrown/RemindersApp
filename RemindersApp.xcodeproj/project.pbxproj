@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7596801272CC529004417E8 /* FavoriteReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7596800272CC529004417E8 /* FavoriteReminderViewController.swift */; };
+		F7596803272CCC68004417E8 /* NewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7596802272CCC67004417E8 /* NewReminderViewController.swift */; };
 		F7E93B5C272B8471000A1589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E93B5B272B8471000A1589 /* AppDelegate.swift */; };
 		F7E93B5E272B8471000A1589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E93B5D272B8471000A1589 /* SceneDelegate.swift */; };
 		F7E93B63272B8471000A1589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E93B61272B8471000A1589 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7596800272CC529004417E8 /* FavoriteReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteReminderViewController.swift; sourceTree = "<group>"; };
+		F7596802272CCC67004417E8 /* NewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderViewController.swift; sourceTree = "<group>"; };
 		F7E93B58272B8471000A1589 /* RemindersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E93B5B272B8471000A1589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7E93B5D272B8471000A1589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				F7E93B93272BA989000A1589 /* RemindersViewController .swift */,
+				F7596800272CC529004417E8 /* FavoriteReminderViewController.swift */,
+				F7596802272CCC67004417E8 /* NewReminderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E93B90272B85F7000A1589 /* Reminder.swift in Sources */,
+				F7596803272CCC68004417E8 /* NewReminderViewController.swift in Sources */,
 				F7E93B96272BAAA3000A1589 /* ReminderCell.swift in Sources */,
+				F7596801272CC529004417E8 /* FavoriteReminderViewController.swift in Sources */,
 				F7E93B5C272B8471000A1589 /* AppDelegate.swift in Sources */,
 				F7E93B5E272B8471000A1589 /* SceneDelegate.swift in Sources */,
 				F7E93B94272BA989000A1589 /* RemindersViewController .swift in Sources */,

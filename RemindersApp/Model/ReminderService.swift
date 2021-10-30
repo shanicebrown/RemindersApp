@@ -13,7 +13,23 @@ class ReminderService{
     
     //Create
     func create(reminder: Reminder){
-        reminders.append(reminder)
+        //Add reminders to reminders array in a sorted order.
+        var indexToInsert: Int?
+        for (index, element) in reminders.enumerated(){
+            if element.date.timeIntervalSince1970 > reminder.date.timeIntervalSince1970{
+                indexToInsert = index
+                break
+            }
+        }
+        
+        // If we have indexToInsert, then we use it!
+        if let indexToInsert = indexToInsert {
+            reminders.insert(reminder, at: indexToInsert)
+        //If not, we append the reminder to the end of the array.
+        } else{
+            reminders.append(reminder)
+    }
+        
     }
 
     
@@ -51,7 +67,7 @@ class ReminderService{
     }
     
     //Get the favoritedReminder
-    func getFavoritedReminders() -> Reminder?{
+    func getFavoritedReminder() -> Reminder?{
         return reminders.first
     }
 }

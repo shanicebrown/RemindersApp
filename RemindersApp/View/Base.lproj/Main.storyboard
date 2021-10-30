@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jly-sT-g5B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" estimatedRowHeight="88" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jly-sT-g5B">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="93" id="0Tv-Zz-7Nl" customClass="ReminderCell" customModule="RemindersApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="93"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" rowHeight="88" id="0Tv-Zz-7Nl" customClass="ReminderCell" customModule="RemindersApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Tv-Zz-7Nl" id="fAh-7g-8pO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGL-Jk-gvK">
@@ -87,15 +87,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="jly-sT-g5B" id="5Ib-ee-Jb7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJz-u0-LKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="702.89855072463774" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--New Reminder View Controller-->
         <scene sceneID="Ih6-UW-T1j">
             <objects>
-                <viewController id="MQu-Q7-n72" sceneMemberID="viewController">
+                <viewController id="MQu-Q7-n72" customClass="NewReminderViewController" customModule="RemindersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4b-K2-OnN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,20 +116,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-tG-NVa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-tG-NVa">
                                 <rect key="frame" x="30" y="216" width="355" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-0M-Gzm">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-0M-Gzm">
                                 <rect key="frame" x="0.0" y="318" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COMPLETED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-Ao-Hn9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="COMPLETED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-Ao-Hn9">
                                 <rect key="frame" x="30" y="522" width="355" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -142,21 +142,35 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="MQu-Q7-n72" eventType="touchUpInside" id="NAh-jL-v7L"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wmy-zf-x0z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="top" secondItem="D61-tG-NVa" secondAttribute="bottom" constant="80" id="R0f-tO-Pb1"/>
+                            <constraint firstItem="1yO-Ao-Hn9" firstAttribute="top" secondItem="bNE-0M-Gzm" secondAttribute="bottom" constant="42" id="RC9-iz-QnY"/>
+                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="leading" secondItem="Wmy-zf-x0z" secondAttribute="leading" id="gi9-Nx-whQ"/>
+                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="trailing" secondItem="Wmy-zf-x0z" secondAttribute="trailing" id="waC-u7-bJA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ePP-Og-AOh"/>
+                    <connections>
+                        <outlet property="completedSwitch" destination="anB-3U-4y5" id="vDv-0P-pS4"/>
+                        <outlet property="datePicker" destination="bNE-0M-Gzm" id="Iwm-uY-38G"/>
+                        <outlet property="titleTextField" destination="RGV-0Q-Ul7" id="6tY-7Y-ZyW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xft-qk-LbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Reminder View Controller-->
         <scene sceneID="9sM-iY-y98">
             <objects>
-                <viewController id="y5p-d9-B62" sceneMemberID="viewController">
+                <viewController id="y5p-d9-B62" customClass="FavoriteReminderViewController" customModule="RemindersApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldu-bt-sHk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +194,10 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="8fh-id-3gY"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="Apq-E9-sjm" id="cGa-A6-20o"/>
+                        <outlet property="titleLabel" destination="xlj-FY-3s7" id="U1e-SD-SwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KF-9e-Zc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,7 +206,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="bCy-7g-dHF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i9F-oN-rhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="PTV-F0-WQc" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eqs-Jq-2ru">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -200,6 +217,7 @@
                         <segue destination="y5p-d9-B62" kind="relationship" relationship="viewControllers" id="wPm-O8-qp5"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9F-oN-rhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1209" y="69"/>
         </scene>
