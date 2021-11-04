@@ -44,9 +44,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
-                                                    <connections>
-                                                        <segue destination="MQu-Q7-n72" kind="show" identifier="UpdateSegue" id="fYM-AZ-kr3"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10/28/21 9:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBf-Xi-pPz">
                                                     <rect key="frame" x="78" y="50" width="253" height="15"/>
@@ -59,6 +56,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="PBf-Xi-pPz" id="G8z-07-i1t"/>
+                                            <outlet property="infoButton" destination="qz9-Qb-t0Y" id="3hq-dX-Umq"/>
                                             <outlet property="isCompletedView" destination="DGL-Jk-gvK" id="RMu-VA-pP0"/>
                                             <outlet property="titleLabel" destination="93L-WG-vTa" id="Zr8-1O-vto"/>
                                         </connections>
@@ -80,7 +78,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="834-9o-7yF">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="5pk-8g-imH"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="5pk-8g-imH">
+                            <connections>
+                                <action selector="editButtonDidPress:" destination="WxS-5b-chr" id="1JR-1O-3yN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="95u-p7-MhF">
                             <connections>
                                 <segue destination="MQu-Q7-n72" kind="show" identifier="AddSegue" id="nG9-I8-b3B"/>
@@ -116,17 +118,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-tG-NVa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-tG-NVa">
                                 <rect key="frame" x="30" y="216" width="355" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-0M-Gzm">
-                                <rect key="frame" x="0.0" y="318" width="414" height="162"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="COMPLETED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-Ao-Hn9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COMPLETED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-Ao-Hn9">
                                 <rect key="frame" x="30" y="522" width="355" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -146,15 +147,13 @@
                                     <action selector="saveButtonTapped:" destination="MQu-Q7-n72" eventType="touchUpInside" id="NAh-jL-v7L"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-0M-Gzm">
+                                <rect key="frame" x="47" y="260" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wmy-zf-x0z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="top" secondItem="D61-tG-NVa" secondAttribute="bottom" constant="80" id="R0f-tO-Pb1"/>
-                            <constraint firstItem="1yO-Ao-Hn9" firstAttribute="top" secondItem="bNE-0M-Gzm" secondAttribute="bottom" constant="42" id="RC9-iz-QnY"/>
-                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="leading" secondItem="Wmy-zf-x0z" secondAttribute="leading" id="gi9-Nx-whQ"/>
-                            <constraint firstItem="bNE-0M-Gzm" firstAttribute="trailing" secondItem="Wmy-zf-x0z" secondAttribute="trailing" id="waC-u7-bJA"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ePP-Og-AOh"/>
                     <connections>
@@ -241,9 +240,6 @@
             <point key="canvasLocation" x="-207.24637681159422" y="68.973214285714278"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="nG9-I8-b3B"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
