@@ -32,7 +32,8 @@ class NewReminderViewController: UIViewController{
                                 isCompleted: completedSwitch.isOn)
         //Update a reminder
         if let reminderIndex = reminderIndex {
-            //Else, create a new reminder object
+            ReminderService.shared.update(reminder: reminder, index: reminderIndex)
+            //else, create a new reminder object
         } else{
     
         ReminderService.shared.create(reminder: reminder)

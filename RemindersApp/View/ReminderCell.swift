@@ -16,7 +16,7 @@ class ReminderCell: UITableViewCell{
     @IBOutlet weak var infoButton: UIButton!
     
     
-    func update(reminder: Reminder){
+    func update(reminder: Reminder, index: Int){
         titleLabel.text = reminder.title
         
         infoButton.tag = index
